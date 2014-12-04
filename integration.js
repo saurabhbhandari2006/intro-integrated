@@ -22,26 +22,25 @@ defaultImages  ={}
 defaultImages.path = "img/";
 defaultImages["qt-logo"] = "game_logo.png";
 defaultImages["qt-background"] = "background.jpg";
-defaultImages["qt-start"] = "start_game.png";
-defaultImages["qt-start-hover"] = "start_game_hover.png";
-defaultImages["qt-background"] = "background.jpg";
+defaultImages["qt-button-start"] = "start_game.png";
+defaultImages["qt-button-start-hover"] = "start_game_hover.png";
 defaultImages["qt-statement-back"] = "speech_bubble_1.png";
 defaultImages["qt-options-back"] = "speech_bubble_2.png";
 defaultImages["qt-player"] = "player.png";
 defaultImages["qt-ai"] = "ai.png";
-defaultImages["qt-say-this"] = "say_button.png";
-defaultImages["qt-know-more"] = "know_more.png";
-defaultImages["qt-left-opt-arrow"] = "leftOpt.png";
-defaultImages["qt-right-opt-arrow"] = "rightOpt.png";
-defaultImages["qt-meter-bar-bg"] = "meterbar_bg.png";
+defaultImages["qt-button-say-this"] = "say_button.png";
+defaultImages["qt-button-know-more"] = "know_more.png";
+defaultImages["qt-arrow-left"] = "leftOpt.png";
+defaultImages["qt-arrow-right"] = "rightOpt.png";
+defaultImages["qt-meter-bar-empty"] = "meterbar_bg.png";
 defaultImages["qt-meter-bar-filled"] = "meter_filled.png";
-defaultImages["qt-bot-overlay"] = "bot_overlay.png";
-defaultImages["qt-message-box-bg"] = "message_box_bg.jpg";
+defaultImages["qt-bottom-overlay"] = "bot_overlay.png";
+defaultImages["qt-message-box-back"] = "message_box_bg.jpg";
 
 defaultText = {};
-defaultText["qt-meter-text"] = "mood";
-defaultText["qt-instruction-header"] = "Instructions";
-defaultText["qt-instructions"] = "The main objective of this game is to get the client's '" + getText("qt-meter-text") +
+defaultText["qt-text-meter"] = "mood";
+defaultText["qt-text-instruction-header"] = "Instructions";
+defaultText["qt-text-instructions"] = "The main objective of this game is to get the client's '" + getText("qt-meter-text") +
     "' above the limit specified in red. <br /><br />" +
     "To get the meter up, you have to respond to the client with an appropriate statement. " +
     "Each client responds to each statement differently. " +

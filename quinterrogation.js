@@ -51,17 +51,17 @@ function initTheme() {
         $("#qt-base-img").attr("src", getImg("qt-background"));
         $("#qt-player-img").attr("src", getImg("qt-player"));
         $("#qt-ai-img").attr("src", getImg("qt-ai"));
-        $(".qt-bot-overlay-img").attr("src", getImg("qt-bot-overlay"));
-        $("#qt-meter-empty").css({background: "url('" + getImg("qt-meter-bar-bg") + "')"});
+        $(".qt-bot-overlay-img").attr("src", getImg("qt-bottom-overlay"));
+        $("#qt-meter-empty").css({background: "url('" + getImg("qt-meter-bar-empty") + "')"});
         $("#qt-meter-filled").css({background: "url('" + getImg("qt-meter-bar-filled") + "')"});
-        $("#qt-meter-indicator span").text(getText("qt-meter-text"));
-        $("#leftOpt").attr("src", getImg("qt-left-opt-arrow"));
-        $("#rightOpt").attr("src", getImg("qt-right-opt-arrow"));
-        $("#qt-say-button").attr("src", getImg("qt-say-this"));
-        $("#qt-know-more").attr("src", getImg("qt-know-more"));
+        $("#qt-meter-indicator span").text(getText("qt-text-meter"));
+        $("#leftOpt").attr("src", getImg("qt-arrow-left"));
+        $("#rightOpt").attr("src", getImg("qt-arrow-right"));
+        $("#qt-say-button").attr("src", getImg("qt-button-say-this"));
+        $("#qt-know-more").attr("src", getImg("qt-button-know-more"));
         $("#qt-speech-bubble-2").attr("src", getImg("qt-options-back"));
         $("#qt-speech-bubble-1").attr("src", getImg("qt-statement-back"));
-        $("#message-box-bg").attr("src", getImg("qt-message-box-bg"));
+        $("#message-box-bg").attr("src", getImg("qt-message-box-back"));
 
         initGame();
 
@@ -106,11 +106,11 @@ function showInstructions() {
         '<img id="start-game" />'
     );
     $()
-    $("#inst-header").text(getText("qt-instruction-header"));
-    $("#inst-content").html(getText("qt-instructions"));
-    $("#start-game").attr('src', getImg("qt-start"));
+    $("#inst-header").text(getText("qt-text-instruction-header"));
+    $("#inst-content").html(getText("qt-text-instructions"));
+    $("#start-game").attr('src', getImg("qt-button-start"));
     $("#start-game").unbind('mouseover').on('mouseover', function() {
-        $("#start-game").attr('src', getImg("qt-start-hover"));
+        $("#start-game").attr('src', getImg("qt-button-start-hover"));
     });
     $("#start-game").unbind('mouseout').on('mouseout', function() {
         $("#start-game").attr('src', getImg("qt-start"))
@@ -226,12 +226,17 @@ function observers() {
 
     $("#qt-say-button").unbind('click').on('click', function() {
         if(answered == false) {
-            $(".option-show").first().trigger('click');
+            $(".option-block:first").trigger('click');
+            $("#leftOpt").css({visibility: "hidden"});
+            $("#rightOpt").css({visibility: "visible"});
+            optionIndex = 0;
+
             $(question).unbind('answered').on('answered', function (e, data) {
-                answered = true;
-                processAnswer(data);
-            });
-        }
+                    answered = true;
+                    processAnswer(data);
+                });
+            }
+
     });
 }
 

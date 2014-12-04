@@ -6,8 +6,8 @@ config.quiz = {
         {name: "default", representation:
             "<div id='statement-area'>" +
                 "<img src='' id='qt-speech-bubble-1' />" +
-                "<div id='statement-text'>" +
-                "</div>" +
+                "<span id='statement-text'>" +
+                "</span>" +
             "</div>" +
          "" +
             "<div id='options-area'>" +
@@ -105,7 +105,7 @@ Question.showQuizPanel = function (obj, question) {
     $('#statement-text').html(question.name);
     $('.option-block').remove();
     for (var i in question.options) {
-        $('#options-area').append('<div class="option-block" id="option-block-' + i + '">' + question.options[i].name + '</div>');
+        $('#options-area').append('<span class="option-block" id="option-block-' + i + '">' + question.options[i].name + '</span>');
     }
     $('.option-block').unbind('click').on('click', function () {
         $this = $(this);
